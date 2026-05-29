@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>김동욱 | 동적 웹앱 포트폴리오</title>
+
+  <meta
+    name="description"
+    content="컴퓨터정보공학부 3학년 김동욱의 동적 웹앱 포트폴리오입니다. HTML, CSS, JavaScript 기반 프로토타입이며 EC2, S3, RDS 확장을 목표로 합니다."
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#home" class="logo">
+        Dongwook<span>Portfolio</span>
+      </a>
+
+      <nav class="nav">
+        <a href="#about">소개</a>
+        <a href="#goal">목표</a>
+        <a href="#strengths">강점</a>
+        <a href="#skills">기술</a>
+        <a href="#architecture">구조</a>
+        <a href="#permissions">권한</a>
+        <a href="#projects">프로젝트</a>
+        <a href="#growth">성장기록</a>
+        <a href="#comments">댓글</a>
+        <a href="#contactFormSection">연락처 남기기</a>
+        <a href="#contact">감사 인사</a>
+      </nav>
+
+      <div class="auth-box">
+        <span id="currentRole" class="role-badge">비로그인</span>
+        <a id="loginPageLink" class="btn small" href="login.html">로그인</a>
+        <button id="logoutBtn" class="btn small danger hidden" type="button">
+          로그아웃
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HOME -->
+    <section id="home" class="hero section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="eyebrow">컴퓨터정보공학부 3학년 · 동적 웹앱 포트폴리오</p>
+
+          <h1>
+            안녕하세요.<br />
+            서비스 구조를 배우고 구현하는
+            <span>김동욱</span>입니다.
+          </h1>
+
+          <p class="hero-text">
+            이 포트폴리오는 단순히 제 소개를 보여주는 정적 페이지가 아니라,
+            글 관리, 댓글 관리, 권한 분리, 이미지 업로드 흐름을 포함한
+            동적 웹앱 포트폴리오입니다.
+          </p>
+
+          <p class="hero-text">
+            현재는 HTML, CSS, JavaScript만으로 동작하는 프론트엔드
+            프로토타입으로 제작하고, 이후 AWS EC2, S3, RDS와 연결하여
+            실제 서비스 구조로 확장하는 것을 목표로 합니다.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn" href="#projects">프로젝트 보기</a>
+            <a class="btn ghost" href="#architecture">서비스 구조 보기</a>
+          </div>
+
+          <div class="hero-stats">
+            <div>
+              <strong>3</strong>
+              <span>사용자 역할</span>
+            </div>
+            <div>
+              <strong>CRUD</strong>
+              <span>글 관리 기능</span>
+            </div>
+            <div>
+              <strong>AWS</strong>
+              <span>확장 목표</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="profile-card">
+          <div class="avatar">DW</div>
+
+          <h2>Dynamic Portfolio</h2>
+
+          <p>
+            자기소개처럼 보이지만 실제로는 관리자 기능과 댓글 기능이 포함된
+            동적 웹앱입니다.
+          </p>
+
+          <ul>
+            <li>관리자: 글 생성, 수정, 삭제, 업로드 가능</li>
+            <li>비로그인: 글과 댓글 조회만 가능</li>
+            <li>로그인 방문자: 댓글 작성, 수정, 삭제 가능</li>
+            <li>확장 목표: EC2, S3, RDS 기반 서비스</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container two-column">
+        <div>
+          <p class="eyebrow">About Me</p>
+          <h2>저는 작은 기능도 서비스 흐름으로 이해하려고 합니다.</h2>
+        </div>
+
+        <div class="text-box">
+          <p>
+            저는 컴퓨터정보공학부 3학년으로, 웹 개발과 클라우드 기반 서비스
+            구조에 관심이 있습니다. 수업에서 배우는 바이브 코딩을 활용하여
+            요구사항을 정리하고, 화면과 기능을 나누며, 실제 서비스처럼
+            동작하는 포트폴리오를 만들고자 합니다.
+          </p>
+
+          <p>
+            이 프로젝트에서 가장 중요하게 생각하는 부분은 “누가 어떤 기능을
+            사용할 수 있는가”입니다. 그래서 비로그인 방문자, 로그인 방문자,
+            관리자 역할을 나누고 각 역할마다 접근 가능한 기능을 다르게
+            설계했습니다.
+          </p>
+
+          <p>
+            앞으로는 이 프론트엔드 프로토타입을 Spring Boot 백엔드,
+            MySQL 기반 RDS, 이미지 저장용 S3, 서버 배포용 EC2와 연결하여
+            완성도 있는 동적 웹 서비스로 발전시키는 것이 목표입니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GOAL -->
+    <section id="goal" class="section alt">
+      <div class="container">
+        <p class="eyebrow">Project Goal</p>
+        <h2>이 포트폴리오의 제작 목표</h2>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <span>01</span>
+            <h3>정적 페이지를 넘어서기</h3>
+            <p>
+              단순히 HTML에 내용을 고정하는 것이 아니라, 글과 댓글을
+              JavaScript로 관리하고 저장할 수 있는 구조를 목표로 합니다.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <span>02</span>
+            <h3>면접관이 이해하기 쉬운 구성</h3>
+            <p>
+              자기소개, 기술스택, 프로젝트, 권한 설계, AWS 확장 구조를
+              한 페이지에서 자연스럽게 확인할 수 있도록 구성합니다.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <span>03</span>
+            <h3>수업 내용과 연결</h3>
+            <p>
+              바이브 코딩으로 요구사항을 정리하고, 기능을 나누고,
+              결과물을 개선하는 과정을 포트폴리오에 담습니다.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <span>04</span>
+            <h3>AWS 확장 가능성</h3>
+            <p>
+              현재는 프론트엔드 중심이지만 이후 EC2, S3, RDS를 붙일 수
+              있도록 구조를 미리 나누어 설계합니다.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- STRENGTHS -->
+    <section id="strengths" class="section">
+      <div class="container">
+        <p class="eyebrow">Strengths</p>
+        <h2>제가 보여주고 싶은 역량</h2>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <span>01</span>
+            <h3>요구사항 정리</h3>
+            <p>
+              필요한 기능을 먼저 정리하고, 사용자 역할에 따라 가능한 기능과
+              불가능한 기능을 구분합니다.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <span>02</span>
+            <h3>권한 설계</h3>
+            <p>
+              비로그인 방문자, 로그인 방문자, 관리자의 권한을 나누어
+              글 관리와 댓글 관리 기능을 안전하게 분리합니다.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <span>03</span>
+            <h3>동적 데이터 관리</h3>
+            <p>
+              글과 댓글을 화면에 고정하지 않고 JavaScript와 저장소를 이용해
+              추가, 수정, 삭제할 수 있는 구조로 설계합니다.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <span>04</span>
+            <h3>운영 관점</h3>
+            <p>
+              관리자 페이지, 업로드, 댓글 관리처럼 실제 서비스를 운영할 때
+              필요한 기능을 고려합니다.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section alt">
+      <div class="container">
+        <p class="eyebrow">Skills</p>
+        <h2>기술 스택과 학습 목표</h2>
+
+        <div class="skill-grid">
+          <article class="skill-card">
+            <h3>Frontend</h3>
+            <p>HTML, CSS, JavaScript</p>
+            <small>반응형 UI, DOM 제어, 이벤트 처리, localStorage 데이터 처리</small>
+          </article>
+
+          <article class="skill-card">
+            <h3>Backend 목표</h3>
+            <p>Java, Spring Boot, Spring Security</p>
+            <small>REST API, 로그인, 인증/인가, 권한 기반 접근 제어</small>
+          </article>
+
+          <article class="skill-card">
+            <h3>Database 목표</h3>
+            <p>MySQL / MariaDB / RDS</p>
+            <small>회원, 게시글, 댓글, 이미지 정보 저장을 위한 테이블 설계</small>
+          </article>
+
+          <article class="skill-card">
+            <h3>Cloud 목표</h3>
+            <p>AWS EC2, S3, RDS</p>
+            <small>서버 배포, 이미지 업로드 저장, 클라우드 데이터베이스 연결</small>
+          </article>
+
+          <article class="skill-card">
+            <h3>Version Control</h3>
+            <p>Git, GitHub</p>
+            <small>프로젝트 코드 관리, 커밋 기록, README 정리</small>
+          </article>
+
+          <article class="skill-card">
+            <h3>Development Style</h3>
+            <p>Vibe Coding</p>
+            <small>자연어 요구사항을 기반으로 AI와 함께 기능을 설계하고 구현</small>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARCHITECTURE -->
+    <section id="architecture" class="section">
+      <div class="container">
+        <p class="eyebrow">Architecture</p>
+        <h2>확장 목표 서비스 구조</h2>
+
+        <div class="architecture-box">
+          <div class="arch-item">
+            방문자 / 면접관
+            <small>브라우저 접속</small>
+          </div>
+
+          <div class="arch-arrow">→</div>
+
+          <div class="arch-item">
+            EC2
+            <small>리소스 서버</small>
+          </div>
+
+          <div class="arch-arrow">→</div>
+
+          <div class="arch-item">
+            RDS
+            <small>회원, 글, 댓글 저장</small>
+          </div>
+
+          <div class="arch-arrow">+</div>
+
+          <div class="arch-item">
+            S3
+            <small>이미지 파일 저장</small>
+          </div>
+        </div>
+
+        <div class="text-box wide">
+          <p>
+            현재 HTML, CSS, JavaScript 버전에서는 브라우저의 localStorage를
+            사용해 글과 댓글 데이터를 임시 저장합니다. 이후 백엔드가 연결되면
+            글, 회원, 댓글 데이터는 RDS에 저장하고 이미지 파일은 S3에 저장하는
+            방식으로 확장할 수 있습니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PERMISSIONS -->
+    <section id="permissions" class="section alt">
+      <div class="container">
+        <p class="eyebrow">Permission Design</p>
+        <h2>사용자 권한 설계</h2>
+
+        <div class="table-wrap">
+          <table class="permission-table">
+            <thead>
+              <tr>
+                <th>기능</th>
+                <th>비로그인</th>
+                <th>로그인 방문자</th>
+                <th>관리자</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>글 조회</td>
+                <td>가능</td>
+                <td>가능</td>
+                <td>가능</td>
+              </tr>
+              <tr>
+                <td>글 작성</td>
+                <td>불가능</td>
+                <td>불가능</td>
+                <td>가능</td>
+              </tr>
+              <tr>
+                <td>글 수정</td>
+                <td>불가능</td>
+                <td>불가능</td>
+                <td>가능</td>
+              </tr>
+              <tr>
+                <td>글 삭제</td>
+                <td>불가능</td>
+                <td>불가능</td>
+                <td>가능</td>
+              </tr>
+              <tr>
+                <td>댓글 작성</td>
+                <td>불가능</td>
+                <td>가능</td>
+                <td>가능</td>
+              </tr>
+              <tr>
+                <td>댓글 수정</td>
+                <td>불가능</td>
+                <td>가능</td>
+                <td>가능</td>
+              </tr>
+              <tr>
+                <td>댓글 삭제</td>
+                <td>불가능</td>
+                <td>가능</td>
+                <td>가능</td>
+              </tr>
+              <tr>
+                <td>이미지 업로드</td>
+                <td>불가능</td>
+                <td>불가능</td>
+                <td>가능</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Projects</p>
+            <h2>프로젝트 글</h2>
+            <p class="section-desc">
+              관리자는 프로젝트 글을 작성, 수정, 삭제할 수 있고
+              방문자는 글을 조회할 수 있습니다.
+            </p>
+          </div>
+
+          <button id="openPostFormBtn" class="btn hidden" type="button">
+            글 작성 / 업로드
+          </button>
+        </div>
+
+        <form id="postForm" class="panel form hidden">
+          <h3 id="postFormTitle">프로젝트 글 작성</h3>
+
+          <input type="hidden" id="editingPostId" />
+
+          <label for="postTitle">
+            제목
+            <input
+              id="postTitle"
+              type="text"
+              placeholder="예: 나만의 동적 포트폴리오"
+              required
+            />
+          </label>
+
+          <label for="postCategory">
+            분류
+            <select id="postCategory">
+              <option value="portfolio">포트폴리오</option>
+              <option value="web">웹 개발</option>
+              <option value="cloud">클라우드</option>
+              <option value="study">학습 기록</option>
+            </select>
+          </label>
+
+          <label for="postContent">
+            설명
+            <textarea
+              id="postContent"
+              placeholder="프로젝트 설명을 입력하세요."
+              required
+            ></textarea>
+          </label>
+
+          <label for="postImage">
+            이미지 파일 업로드
+            <input id="postImage" type="file" accept="image/*" />
+            <small class="form-help">
+              관리자만 이미지를 파일로 선택할 수 있습니다.
+              현재 버전은 브라우저 localStorage에 저장됩니다.
+            </small>
+          </label>
+
+          <div class="form-actions">
+            <button class="btn" type="submit">저장</button>
+            <button id="cancelPostBtn" class="btn ghost" type="button">
+              취소
+            </button>
+          </div>
+        </form>
+
+        <div id="postList" class="post-grid"></div>
+      </div>
+    </section>
+
+    <!-- GROWTH -->
+    <section id="growth" class="section alt">
+      <div class="container">
+        <p class="eyebrow">Growth Record</p>
+        <h2>학습 및 성장 기록</h2>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <span>STEP 01</span>
+            <h3>요구사항 정리</h3>
+            <p>
+              포트폴리오가 단순 자기소개 페이지가 아니라 동적 웹앱이 되도록
+              기능과 권한을 먼저 정리했습니다.
+            </p>
+          </article>
+
+          <article class="timeline-item">
+            <span>STEP 02</span>
+            <h3>화면 구조 설계</h3>
+            <p>
+              소개, 기술스택, 프로젝트, 댓글, 권한 설계, AWS 구조를
+              한 페이지에서 볼 수 있도록 섹션을 나누었습니다.
+            </p>
+          </article>
+
+          <article class="timeline-item">
+            <span>STEP 03</span>
+            <h3>프론트엔드 구현</h3>
+            <p>
+              HTML, CSS, JavaScript로 화면과 기능을 구현하고,
+              localStorage를 사용하여 데이터를 저장하는 흐름을 만들 예정입니다.
+            </p>
+          </article>
+
+          <article class="timeline-item">
+            <span>STEP 04</span>
+            <h3>AWS 확장</h3>
+            <p>
+              이후 EC2에 서버를 배포하고, RDS에 데이터를 저장하며,
+              S3를 통해 이미지 업로드 기능을 실제로 연결하는 것이 목표입니다.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMENTS -->
+    <section id="comments" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Comments</p>
+            <h2>면접관 댓글</h2>
+            <p class="section-desc">
+              로그인한 방문자는 댓글을 작성, 수정, 삭제할 수 있습니다.
+              비로그인 방문자는 댓글을 읽기만 할 수 있습니다.
+            </p>
+          </div>
+        </div>
+
+        <form id="commentForm" class="panel form hidden">
+          <h3 id="commentFormTitle">댓글 작성</h3>
+
+          <input type="hidden" id="editingCommentId" />
+
+          <label for="commentWriter">
+            이름
+            <input
+              id="commentWriter"
+              type="text"
+              placeholder="이름을 입력하세요"
+              required
+            />
+          </label>
+
+          <label for="commentContent">
+            댓글
+            <textarea
+              id="commentContent"
+              placeholder="포트폴리오에 대한 의견을 남겨주세요."
+              required
+            ></textarea>
+          </label>
+
+          <div class="form-actions">
+            <button class="btn" type="submit">댓글 저장</button>
+            <button id="cancelCommentBtn" class="btn ghost" type="button">
+              취소
+            </button>
+          </div>
+        </form>
+
+        <div id="commentNotice" class="notice"></div>
+
+        <div id="commentList" class="comment-list"></div>
+      </div>
+    </section>
+
+    <!-- CONTACT FORM -->
+    <section id="contactFormSection" class="section contact-form-section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Contact Form</p>
+            <h2>연락처 남기기</h2>
+
+            <p class="section-desc">
+              연락처를 남겨주시면 확인 후 연락드리겠습니다.
+            </p>
+          </div>
+        </div>
+
+        <form id="contactForm" class="panel form">
+          <div class="contact-grid">
+            <label>
+              이름
+              <input
+                type="text"
+                id="contactName"
+                placeholder="이름을 입력하세요"
+                required
+              />
+            </label>
+
+            <label>
+              전화번호
+              <input
+                type="tel"
+                id="contactPhone"
+                placeholder="010-0000-0000"
+                required
+              />
+            </label>
+          </div>
+
+          <label>
+            이메일
+            <input
+              type="email"
+              id="contactEmail"
+              placeholder="example@email.com"
+            />
+          </label>
+
+          <label>
+            문의 내용
+            <textarea
+              id="contactMessage"
+              placeholder="문의 내용을 입력하세요"
+              required
+            ></textarea>
+          </label>
+
+          <div class="form-actions">
+            <button type="submit" class="btn">
+              연락처 남기기
+            </button>
+          </div>
+        </form>
+
+        <div id="contactResult" class="notice hidden"></div>
+      </div>
+    </section>
+
+    <!-- THANK YOU -->
+    <section id="contact" class="section thankyou-section">
+      <div class="container">
+
+        <div class="thankyou-card">
+
+          <p class="eyebrow">Thank You</p>
+
+          <h2>
+            끝까지 봐주셔서 감사합니다.
+          </h2>
+
+          <p class="thankyou-text">
+            이 포트폴리오는 단순한 자기소개 페이지가 아니라
+            사용자 권한 분리, 댓글 기능, 업로드 기능,
+            AWS 확장 구조까지 고려한 동적 웹앱 포트폴리오입니다.
+          </p>
+
+          <p class="thankyou-text">
+            현재는 HTML, CSS, JavaScript 기반으로 제작하고 있으며,
+            이후 Spring Boot, RDS, S3, EC2와 연결하여
+            실제 서비스 형태로 발전시키는 것을 목표로 하고 있습니다.
+          </p>
+
+          <div class="thankyou-highlight">
+
+          <div class="highlight-item">
+            <strong>Frontend</strong>
+            <span>HTML · CSS · JavaScript</span>
+          </div>
+
+          <div class="highlight-item">
+            <strong>Backend Goal</strong>
+            <span>Spring Boot · REST API</span>
+          </div>
+
+          <div class="highlight-item">
+            <strong>Cloud Goal</strong>
+            <span>AWS EC2 · S3 · RDS</span>
+          </div>
+
+        </div>
+
+          <div class="thankyou-message">
+            <h3>
+              함께 성장하는 개발자가 되겠습니다.
+            </h3>
+
+            <p>
+              작은 기능 하나도 단순 구현이 아니라
+              서비스 관점으로 이해하고 설계하는 개발자가 되기 위해
+              계속 배우고 성장하고 있습니다.
+            </p>
+          </div>
+
+          <div class="thankyou-footer">
+            <span>김동욱</span>
+            <span>컴퓨터정보공학부 3학년</span>
+            <span>Dynamic Web App Portfolio</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© 2026 김동욱. Dynamic Web App Portfolio.</p>
+      <p>HTML · CSS · JavaScript 기반 프로토타입</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>
